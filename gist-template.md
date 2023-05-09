@@ -54,6 +54,8 @@ Bracket Expressions -- displayed inside `[brackets]` -- signify the allowable ty
 - `_\.-` means the group may contain a limited set of special characters
 - `a-z`  means the group may contain alpha characters 
 - `0-9`  means the group may contain numeric characters 
+- `[a-z0-9_\.-]` means the group may contain alphanumeric, underscore, period, or dash
+
 
 ### Character Classes
 
@@ -69,8 +71,15 @@ The OR Operator (|) allows you to set specified allowable characters, while offe
 
 ### Flags
 
+Sometimes flags are added at the very end of a RegEx, and apply additional restrictions on the RegEx as a whole. There are no flags in our email address example, but some examples found in other RegEx are `i` which means to ignore case, or `m` which means that multi-line entry format should be respected, and not condensed to one line.
+
+
 ### Character Escapes
+
+`\` is often used in RegEx when a character needs to be interpreted as its character, not as a quantifier in an equation or statement. For instance, in a RegEx, `.` can mean "any one character." By preceeding it with \, it means that we are only looking for the character period. In our example:
+
+- `\.` means that a period is one of the allowable characters. The \ ensures that the period isn't interpreted as "any one character," but instead as a "plain old period."
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+This Gist was written by Colin Leidy. His GitHub profile can be found [here](https://github.com/CollyLee).
